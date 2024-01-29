@@ -45,10 +45,7 @@
 }
 
 .loadingContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 10%;
+  padding: 50%;
 }
 
 .loader {

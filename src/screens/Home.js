@@ -24,15 +24,9 @@ const Home = ({ data }) => {
       <header style={{ marginTop: "3%", marginBottom: "3%" }}>
         <img src={MuciLogo} alt="MUCI Logo" loading="lazy" />
       </header>
-      <main className="body">
+      <main className="body" style={{ display: imageLoaded ? "flex" : "none" }}>
         {data?.map((d, index) => (
           <Link to={`/detalle/${index}`} key={d.title} className="imgContainer">
-            {/* Condición para mostrar el loader mientras la imagen carga */}
-            {imageLoaded ? null : (
-              <div className="loadingContainer">
-                <div className="loader"></div>
-              </div>
-            )}
             <img
               src={d.imgHome}
               alt="insecto"
@@ -46,6 +40,12 @@ const Home = ({ data }) => {
           </Link>
         ))}
       </main>
+      {/* Condición para mostrar el loader mientras la imagen carga */}
+      {imageLoaded ? null : (
+        <div className="loadingContainer">
+          <div className="loader"></div>
+        </div>
+      )}
     </div>
   );
 };

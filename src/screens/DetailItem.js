@@ -228,8 +228,8 @@ const DetailItem = ({ data }) => {
                   alt="insecto"
                   className={isZoomed ? "zoomed-image" : ""}
                   style={{
-                    height: isZoomed ? "auto" : "53vh",
-                    width: isZoomed ? "100vw" : "100%",
+                    height: isZoomed ? "auto" : "500px",
+                    width: isZoomed ? "100vw" : "auto",
                   }}
                   loading="lazy"
                 />
@@ -284,7 +284,13 @@ const DetailItem = ({ data }) => {
           </>
         )}
       </TransformWrapper>
-      <div style={{ display: isZoomed ? "none" : "block", width: "50%" }}>
+      <div
+        style={{
+          display: isZoomed ? "none" : "block",
+          width: "50%",
+          marginBottom: 30,
+        }}
+      >
         <h2
           style={{
             textAlign: "center",
