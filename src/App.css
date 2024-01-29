@@ -1,0 +1,77 @@
+.container {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.imgContainer {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+  text-decoration: none;
+  color: inherit;
+}
+
+.img {
+  width: 50%;
+}
+
+.title {
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.subtitle {
+  color: #FFF;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.loadingContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid rgb(33, 33, 33);
+  border-top: 4px solid #f3f3f3;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation-name: spin; /* Nombre de la animación */
+  animation-duration: 1.5s; /* Duración de la animación */
+  animation-timing-function: linear; /* Función de temporización de la animación */
+  animation-iteration-count: infinite; /* Número de iteraciones de la animación */
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.zoomed-image {
+  transition: height 1s ease-in-out, width 1s ease-in-out;
+}
