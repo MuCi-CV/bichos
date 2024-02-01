@@ -2,22 +2,51 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MuciLogo from "../assets/muciLogo.svg";
 import "../App.css";
+import { useImage } from "../Context/ImageContext";
 
 const Home = ({ data }) => {
-  // Estado para controlar la carga de las imágenes
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  // Manejador de eventos cuando la imagen se carga
-  const handleImageLoad = () => {
-    // Agregar un setTimeout de 3 segundos
-    setTimeout(() => {
-      setImageLoaded(true);
-    }, 3000);
-  };
+  const { setGlobalImageLoaded, globalImageLoaded } = useImage();
 
   useEffect(() => {
-    handleImageLoad();
-  }, []);
+    const preloadImages = async () => {
+      if (!globalImageLoaded) {
+        // Cargar todas las imágenes antes de mostrarlas en la pantalla
+        const imagePromises = data.flatMap((d) => {
+          return [
+            new Promise((resolve, reject) => {
+              const imgHome = new Image();
+              imgHome.src = d.imgHome;
+              imgHome.onload = resolve;
+              imgHome.onerror = reject;
+            }),
+            new Promise((resolve, reject) => {
+              const img = new Image();
+              img.src = d.img;
+              img.onload = resolve;
+              img.onerror = reject;
+            }),
+          ];
+        });
+
+        try {
+          // Esperar hasta que todas las imágenes se hayan cargado
+          await Promise.all(imagePromises);
+          // Todas las imágenes se han cargado, mostrarlas
+          setImageLoaded(true);
+          // Establecer el estado de carga de imágenes en el contexto global
+          setGlobalImageLoaded(true);
+        } catch (error) {
+          console.error("Error al cargar las imágenes", error);
+        }
+      } else {
+        // Si las imágenes ya se cargaron previamente, establecer el estado local
+        setImageLoaded(true);
+      }
+    };
+
+    preloadImages();
+  }, [data, setGlobalImageLoaded, globalImageLoaded]);
 
   return (
     <div className="container">
@@ -32,7 +61,6 @@ const Home = ({ data }) => {
               alt="insecto"
               className="img"
               loading="lazy"
-              onLoad={handleImageLoad}
               style={{ display: imageLoaded ? "block" : "none" }}
             />
             <p className="title">{d.title}</p>
@@ -40,8 +68,7 @@ const Home = ({ data }) => {
           </Link>
         ))}
       </main>
-      {/* Condición para mostrar el loader mientras la imagen carga */}
-      {imageLoaded ? null : (
+      {!imageLoaded && (
         <div className="loadingContainer">
           <div className="loader"></div>
         </div>

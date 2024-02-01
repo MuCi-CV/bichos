@@ -152,7 +152,6 @@ const DetailItem = ({ data }) => {
           </p>
         </div>
       </div>
-
       <TransformWrapper
         initialScale={currentScale}
         onZoom={(newScale) => {
@@ -214,13 +213,21 @@ const DetailItem = ({ data }) => {
                 <img src={minus} alt="minus" />
               </button>
             </div>
-            <TransformComponent>
+            <TransformComponent
+              wrapperStyle={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "visible",
+              }}
+            >
               <div
                 style={{
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   marginTop: isZoomed ? 0 : 50,
+                  height: isZoomed ? "100vh" : "auto",
                 }}
               >
                 <img
@@ -228,8 +235,8 @@ const DetailItem = ({ data }) => {
                   alt="insecto"
                   className={isZoomed ? "zoomed-image" : ""}
                   style={{
-                    height: isZoomed ? "auto" : "500px",
-                    width: isZoomed ? "100vw" : "auto",
+                    height: isZoomed ? "100%" : "500px",
+                    width: isZoomed ? "100%" : "auto",
                   }}
                   loading="lazy"
                 />
@@ -247,9 +254,12 @@ const DetailItem = ({ data }) => {
                 right: "10px",
               }}
               onClick={() => {
-                setIsZoomed(false);
-                //setCurrentScale(1);
-                resetTransform();
+                if (currentScale === 1) {
+                  setIsZoomed(false);
+                } else {
+                  setCurrentScale(1);
+                  resetTransform();
+                }
               }}
             >
               <img

@@ -12,6 +12,7 @@ import StinkSquare from "./assets/images/Stink Bug/square_10.jpg";
 import SweatSquare from "./assets/images/Sweat Bee/square_10.jpg";
 import TortoiseSquare from "./assets/images/Tortoise/square_10.jpg";
 import UnknownSquare from "./assets/images/Unknown/square_10.jpg";
+import { ImageProvider } from "./Context/ImageContext";
 
 function App() {
   const data = [
@@ -84,10 +85,12 @@ function App() {
   ];
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home data={data} />} />
-        <Route path="/detalle/:id" element={<DetailItem data={data} />} />
-      </Routes>
+      <ImageProvider>
+        <Routes>
+          <Route path="/" element={<Home data={data} />} />
+          <Route path="/detalle/:id" element={<DetailItem data={data} />} />
+        </Routes>
+      </ImageProvider>
     </Router>
   );
 }
