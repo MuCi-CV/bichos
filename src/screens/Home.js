@@ -53,7 +53,10 @@ const Home = ({ data }) => {
       <header style={{ marginTop: "3%", marginBottom: "3%" }}>
         <img src={MuciLogo} alt="MUCI Logo" loading="lazy" />
       </header>
-      <main className="body" style={{ display: imageLoaded ? "flex" : "none" }}>
+      <main
+        className="body"
+        style={{ display: imageLoaded ? "flex" : "none", rowGap: 37.5 }}
+      >
         {data?.map((d, index) => (
           <Link to={`/detalle/${index}`} key={d.title} className="imgContainer">
             <img
