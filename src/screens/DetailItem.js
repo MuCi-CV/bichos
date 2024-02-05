@@ -236,7 +236,7 @@ const DetailItem = ({ data }) => {
                   className={isZoomed ? "zoomed-image" : ""}
                   style={{
                     height: isZoomed ? "100%" : "500px",
-                    width: isZoomed ? "100%" : "auto",
+                    width: isZoomed ? "auto" : "auto",
                   }}
                   loading="lazy"
                 />
