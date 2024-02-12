@@ -383,7 +383,11 @@ const DetailItem = ({ data }) => {
         </p>
         <img src={arrowUpRight} alt="arrowUpRight" />
       </div>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        info={item.info}
+      />
     </div>
   );
 };

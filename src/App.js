@@ -2,86 +2,118 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./screens/Home";
 import DetailItem from "./screens/DetailItem";
-import BeeSquare from "./assets/images/Bee/square_10.jpg";
-import ColeopteraSquare from "./assets/images/Coleoptera Curculionidae/square_10.jpg";
-import Coleoptera from "./assets/images/Coleoptera Curculionidae/2x3_40.jpg";
-import EscarabajoSquare from "./assets/images/Escarabajo Tigre/square_10.jpg";
-import Escarabajo from "./assets/images/Escarabajo Tigre/2x3_40.jpg";
-import EspinaSquare from "./assets/images/Espina/square_10.jpg";
-import StinkSquare from "./assets/images/Stink Bug/square_10.jpg";
-import SweatSquare from "./assets/images/Sweat Bee/square_10.jpg";
-import TortoiseSquare from "./assets/images/Tortoise/square_10.jpg";
-import UnknownSquare from "./assets/images/Unknown/square_10.jpg";
+import EscarabajoTigre from "./assets/images/escarabajoTigre.jpg";
+import BichosEspina from "./assets/images/bichosEspina.jpg";
+import ChincheMalholiente from "./assets/images/chincheMalholiente.jpg";
+import EscarabajoTortuga from "./assets/images/escarabajoTortuga.jpg";
+import ChinchePlano from "./assets/images/chinchePlano.jpg";
+import EscarabajoEscamado from "./assets/images/escarabajoEscamado.jpg";
+import AbejaNativa from "./assets/images/abejanativa.jpg";
+import AbejaSolitaria from "./assets/images/abejaSolitaria.jpg";
+import BichoCazador from "./assets/images/bichoCazador.jpg";
 import { ImageProvider } from "./Context/ImageContext";
+import info1 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo Tortuga.jpg";
+import info2 from "./assets/Tablas_Informativas_Actualizadas/Chinche Plano.jpg";
+import info3 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo Tigre.jpg";
+import info4 from "./assets/Tablas_Informativas_Actualizadas/Bichos Espina.jpg";
+import info5 from "./assets/Tablas_Informativas_Actualizadas/Chinche Malholiente.jpg";
+import info6 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo Escamado.jpg";
+import info7 from "./assets/Tablas_Informativas_Actualizadas/Abeja Nativa sin Aguijón.jpg";
+import info8 from "./assets/Tablas_Informativas_Actualizadas/Abeja Solitaria.jpg";
+import info9 from "./assets/Tablas_Informativas_Actualizadas/Bicho Cazador.jpg";
 
 function App() {
   const data = [
     {
-      imgHome: BeeSquare,
-      img: BeeSquare,
-      title: "Item 1",
+      imgHome: EscarabajoTortuga,
+      img: EscarabajoTortuga,
+      title: "Escarabajo Tortuga",
       subtitle: "Subtítulo del Item 1",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
-      qr: "codigo_qr_1.png",
+        "Sus caparazones se desarrollan de tal forma que dificultan el agarre de los depredadores.",
+      info: info1,
     },
     {
-      imgHome: ColeopteraSquare,
-      img: Coleoptera,
-      title: "Item 2",
+      imgHome: ChinchePlano,
+      img: ChinchePlano,
+      title: "Chinche Plano “Flag Bug”",
       subtitle: "Subtítulo del Item 2",
-      description: "Descripción detallada del Item 2.",
-      qr: "codigo_qr_2.png",
+      description:
+        "Probablemente sea de la especie más grande de su familia en Sudamérica.",
+      info: info2,
     },
     {
-      imgHome: EscarabajoSquare,
-      img: Escarabajo,
-      title: "Item 3",
+      imgHome: EscarabajoTigre,
+      img: EscarabajoTigre,
+      title: "Escarabajo Tigre",
       subtitle: "Subtítulo del Item 3",
-      description: "Descripción detallada del Item 3.",
-      qr: "codigo_qr_3.png",
+      description:
+        "es el insecto más rápido de todo el mundo, son cazadores innatos con una excelente visión.",
+      info: info3,
     },
     {
-      imgHome: EspinaSquare,
-      img: EspinaSquare,
-      title: "Item 4",
+      imgHome: BichosEspina,
+      img: BichosEspina,
+      title: "Bichos Espina",
       subtitle: "Subtítulo del Item 4",
-      description: "Descripción detallada del Item 4.",
-      qr: "codigo_qr_4.png",
+      description:
+        "Son como cigarritas pero el sonido que producen es de una frecuencia tan baja, que no es audible por nosotros.",
+      info: info4,
     },
     {
-      imgHome: StinkSquare,
-      img: StinkSquare,
-      title: "Item 5",
+      imgHome: ChincheMalholiente,
+      img: ChincheMalholiente,
+      title: "Chinche Malholiente",
       subtitle: "Subtítulo del Item 5",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
-      qr: "codigo_qr_5.png",
+        "Esta especie muda de exoesqueleto constantemente hasta llegar a la adultez",
+      info: info5,
     },
     {
-      imgHome: SweatSquare,
-      img: SweatSquare,
-      title: "Item 6",
+      imgHome: EscarabajoEscamado,
+      img: EscarabajoEscamado,
+      title: "Escarabajo Escamado",
       subtitle: "Subtítulo del Item 6",
-      description: "Descripción detallada del Item 6.",
-      qr: "codigo_qr_6.png",
+      description:
+        "Es un escarabajo que sus larvas se crían dentro de tejido vegetal vivo.",
+      info: info6,
     },
     {
-      imgHome: TortoiseSquare,
-      img: TortoiseSquare,
-      title: "Item 7",
+      imgHome: AbejaNativa,
+      img: AbejaNativa,
+      title: "Abeja Nativa sin Aguijón",
       subtitle: "Subtítulo del Item 7",
-      description: "Descripción detallada del Item 7.",
-      qr: "codigo_qr_7.png",
+      description:
+        "Son animales sociales, construyen colmenas en los huecos dentro de los árboles con un gran follaje y sombras. ",
+      info: info7,
     },
     {
-      imgHome: UnknownSquare,
-      img: UnknownSquare,
-      title: "Item 8",
+      imgHome: AbejaSolitaria,
+      img: AbejaSolitaria,
+      title: "Abeja Solitaria",
       subtitle: "Subtítulo del Item 8",
-      description: "Descripción detallada del Item 8.",
-      qr: "codigo_qr_8.png",
+      description:
+        "Son tantas especies diferentes que habitan desde Ontario Canadá en hasta la pampa en Argentina.",
+      info: info8,
     },
+    {
+      imgHome: BichoCazador,
+      img: BichoCazador,
+      title: "Bicho Cazador",
+      subtitle: "Subtítulo del Item 9",
+      description:
+        "De la misma familia que las vinchucas. Las formas y colores les sirven de camuflaje para parecer hojas secas.",
+      info: info9,
+    },
+    /*{
+      imgHome: "",
+      img: "",
+      title: "Mosca Dorada",
+      subtitle: "Subtítulo del Item 10",
+      description:
+        "son comunes en las casas, sus larvas son descomponedoras de materia orgánica",
+      info: "codigo_qr_8.png",
+    },*/
   ];
   return (
     <Router>

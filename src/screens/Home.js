@@ -67,7 +67,7 @@ const Home = ({ data }) => {
               style={{ display: imageLoaded ? "block" : "none" }}
             />
             <p className="title">{d.title}</p>
-            <p className="subtitle">{d.subtitle}</p>
+            {/*<p className="subtitle">{d.subtitle}</p>*/}
           </Link>
         ))}
       </main>

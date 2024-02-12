@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import xIcon from "../assets/xIcon.svg";
-import qrPrueba from "../assets/qrPrueba.png";
 
-const Modal = ({ isOpen, onClose }) => {
+const Modal = ({ isOpen, onClose, info }) => {
   const modalRef = useRef(null);
   const [isModalVisible, setIsModalVisible] = useState(isOpen);
 
@@ -51,13 +50,13 @@ const Modal = ({ isOpen, onClose }) => {
           top: isOpen ? "100%" : "-100%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          backgroundColor: "#212121",
+          backgroundColor: "rgb(24 25 17)",
           padding: 100,
           borderRadius: "16px",
           transition: "top 0.3s",
         }}
       >
-        <p
+        {/*<p
           style={{
             textAlign: "center",
             color: "#FFF",
@@ -69,8 +68,8 @@ const Modal = ({ isOpen, onClose }) => {
           }}
         >
           Escanea este QR para obtener más{"\n"}información de esta especie
-        </p>
-        <img src={qrPrueba} alt="QR Code" style={{ width: "100%" }} />
+        </p>*/}
+        <img src={info} alt="info" />
         <button
           style={{
             background: "none",
@@ -78,7 +77,7 @@ const Modal = ({ isOpen, onClose }) => {
             cursor: "pointer",
             fontSize: "20px",
             position: "absolute",
-            top: "10px",
+            top: "15%",
             right: "10px",
           }}
           onClick={onClose}
