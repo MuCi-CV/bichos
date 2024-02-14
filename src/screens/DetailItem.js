@@ -81,6 +81,8 @@ const DetailItem = ({ data }) => {
 
   const item = data[index];
 
+  const currentImageMeasurement = item.medidas;
+
   const handleVolverAtras = () => {
     navigate("/");
   };
@@ -145,9 +147,9 @@ const DetailItem = ({ data }) => {
               fontWeight: "500",
             }}
           >
-            {currentScale % 1 !== 0
-              ? currentScale.toFixed(2)
-              : currentScale.toFixed(0)}
+            {(currentScale * currentImageMeasurement) % 1 !== 0
+              ? (currentScale * currentImageMeasurement).toFixed(2)
+              : (currentScale * currentImageMeasurement).toFixed(0)}
             mm
           </p>
         </div>
@@ -285,9 +287,9 @@ const DetailItem = ({ data }) => {
                   fontWeight: "500",
                 }}
               >
-                {currentScale % 1 !== 0
-                  ? currentScale.toFixed(2)
-                  : currentScale.toFixed(0)}
+                {(currentScale * currentImageMeasurement) % 1 !== 0
+                  ? (currentScale * currentImageMeasurement).toFixed(2)
+                  : (currentScale * currentImageMeasurement).toFixed(0)}
                 mm
               </p>
             </div>

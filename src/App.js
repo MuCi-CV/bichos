@@ -32,6 +32,7 @@ function App() {
       description:
         "Sus caparazones se desarrollan de tal forma que dificultan el agarre de los depredadores.",
       info: info1,
+      medidas: 18.6,
     },
     {
       imgHome: ChinchePlano,
@@ -41,6 +42,7 @@ function App() {
       description:
         "Probablemente sea de la especie más grande de su familia en Sudamérica.",
       info: info2,
+      medidas: 21.5,
     },
     {
       imgHome: EscarabajoTigre,
@@ -50,6 +52,7 @@ function App() {
       description:
         "es el insecto más rápido de todo el mundo, son cazadores innatos con una excelente visión.",
       info: info3,
+      medidas: 28.4,
     },
     {
       imgHome: BichosEspina,
@@ -59,6 +62,7 @@ function App() {
       description:
         "Son como cigarritas pero el sonido que producen es de una frecuencia tan baja, que no es audible por nosotros.",
       info: info4,
+      medidas: 18.7,
     },
     {
       imgHome: ChincheMalholiente,
@@ -68,6 +72,7 @@ function App() {
       description:
         "Esta especie muda de exoesqueleto constantemente hasta llegar a la adultez",
       info: info5,
+      medidas: 27.6,
     },
     {
       imgHome: EscarabajoEscamado,
@@ -77,6 +82,7 @@ function App() {
       description:
         "Es un escarabajo que sus larvas se crían dentro de tejido vegetal vivo.",
       info: info6,
+      medidas: 15.5,
     },
     {
       imgHome: AbejaNativa,
@@ -86,6 +92,7 @@ function App() {
       description:
         "Son animales sociales, construyen colmenas en los huecos dentro de los árboles con un gran follaje y sombras. ",
       info: info7,
+      medidas: 21.1,
     },
     {
       imgHome: AbejaSolitaria,
@@ -95,6 +102,7 @@ function App() {
       description:
         "Son tantas especies diferentes que habitan desde Ontario Canadá en hasta la pampa en Argentina.",
       info: info8,
+      medidas: 20.7,
     },
     {
       imgHome: BichoCazador,
@@ -104,6 +112,7 @@ function App() {
       description:
         "De la misma familia que las vinchucas. Las formas y colores les sirven de camuflaje para parecer hojas secas.",
       info: info9,
+      medidas: 15.6,
     },
     /*{
       imgHome: "",
