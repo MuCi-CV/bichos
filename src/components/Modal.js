@@ -51,7 +51,7 @@ const Modal = ({ isOpen, onClose, info }) => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           backgroundColor: "rgb(24 25 17)",
-          padding: 100,
+          padding: 50,
           borderRadius: "16px",
           transition: "top 0.3s",
         }}
@@ -69,7 +69,11 @@ const Modal = ({ isOpen, onClose, info }) => {
         >
           Escanea este QR para obtener más{"\n"}información de esta especie
         </p>*/}
-        <img src={info} alt="info" />
+        <img
+          src={info}
+          alt="info"
+          style={{ height: "80vh", objectFit: "cover" }}
+        />
         <button
           style={{
             background: "none",
@@ -77,8 +81,8 @@ const Modal = ({ isOpen, onClose, info }) => {
             cursor: "pointer",
             fontSize: "20px",
             position: "absolute",
-            top: "15%",
-            right: "10px",
+            //top: "15%",
+            right: 10,
           }}
           onClick={onClose}
         >

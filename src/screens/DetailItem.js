@@ -63,6 +63,14 @@ const DetailItem = ({ data }) => {
       handleButtonsActivity();
     });
 
+    // Bloquear el zoom si el modal está abierto
+    if (isModalOpen) {
+      document.body.classList.remove("zoom-blocker");
+    } else {
+      // Bloquear el zoom si el modal está cerrado
+      document.body.classList.add("zoom-blocker");
+    }
+
     // Limpiar los temporizadores y los listeners al desmontar el componente
     return () => {
       clearTimeout(activityTimeout);
@@ -70,7 +78,7 @@ const DetailItem = ({ data }) => {
       window.removeEventListener("mousemove", handleActivity);
       window.removeEventListener("touchmove", handleActivity);
     };
-  }, [navigate, isZoomed, setShowButtons]);
+  }, [navigate, isZoomed, setShowButtons, isModalOpen]);
 
   /*if (!data || index === undefined || index < 0 || index >= data.length) {
     // Manejar el caso en el que no hay datos válidos para el índice dado
@@ -228,7 +236,7 @@ const DetailItem = ({ data }) => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  marginTop: isZoomed ? 0 : 50,
+                  marginTop: isZoomed ? 0 : 25,
                   height: isZoomed ? "100vh" : "auto",
                 }}
               >
@@ -300,7 +308,6 @@ const DetailItem = ({ data }) => {
         style={{
           display: isZoomed ? "none" : "block",
           width: "50%",
-          marginBottom: 30,
         }}
       >
         <h2
@@ -319,7 +326,7 @@ const DetailItem = ({ data }) => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-start",
-            height: 70,
+            //height: 70,
             marginBottom: 30,
           }}
         >

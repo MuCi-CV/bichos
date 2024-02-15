@@ -48,6 +48,24 @@ const Home = ({ data }) => {
     preloadImages();
   }, [data, setGlobalImageLoaded, globalImageLoaded]);
 
+  useEffect(() => {
+    // Bloquear el zoom al cargar el componente
+    document.body.classList.add("zoom-blocker");
+
+    // Bloquear el gesto de pellizcar para evitar el zoom en dispositivos táctiles
+    document.addEventListener("gesturestart", function (e) {
+      e.preventDefault();
+    });
+
+    // Eliminar el bloqueo de zoom y el evento al desmontar el componente
+    /*return () => {
+      document.body.classList.remove("zoom-blocker");
+      document.removeEventListener("gesturestart", function (e) {
+        e.preventDefault();
+      });
+    };*/
+  }, []);
+
   return (
     <div className="container">
       <header style={{ marginTop: "3%", marginBottom: "3%" }}>

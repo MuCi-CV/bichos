@@ -75,3 +75,27 @@ html {
 .zoomed-image {
   transition: height 1s ease-in-out, width 1s ease-in-out;
 }
+
+.zoom-blocker {
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -ms-content-zooming: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  zoom: reset;
+  touch-zooming: none;
+  user-scalable: no;
+  -ms-scroll-chaining: none;
+  -ms-scroll-rails: none;
+  -ms-scroll-limit: none;
+  -ms-content-zoom-chaining: none;
+  -ms-content-zooming: none;
+  -ms-content-zoom-limit: none;
+}
