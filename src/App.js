@@ -21,11 +21,20 @@ import info6 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo Escamado
 import info7 from "./assets/Tablas_Informativas_Actualizadas/Abeja Nativa sin Aguijón.jpg";
 import info8 from "./assets/Tablas_Informativas_Actualizadas/Abeja Solitaria.jpg";
 import info9 from "./assets/Tablas_Informativas_Actualizadas/Bicho Cazador.jpg";
+import EscarabajoTortugaSmall from "./assets/images/escarabajoTortugaSmall.jpg";
+import ChinchePlanoSmall from "./assets/images/chinchePlanoSmall.jpg";
+import EscarabajoTigreSmall from "./assets/images/escarabajoTigreSmall.jpg";
+import BichosEspinaSmall from "./assets/images/bichoEspinaSmall.jpg";
+import ChincheMalholienteSmall from "./assets/images/chincheMalholienteSmall.jpg";
+import EscarabajoEscamadoSmall from "./assets/images/escarabajoEscamadoSmall.jpg";
+import AbejaNativaSmall from "./assets/images/abejaNativaSmall.jpg";
+import AbejaSolitariaSmall from "./assets/images/abejaSolitariaSmall.jpg";
+import BichoCazadorSmall from "./assets/images/bichoCazadorSmall.jpg";
 
 function App() {
   const data = [
     {
-      imgHome: EscarabajoTortuga,
+      imgHome: EscarabajoTortugaSmall,
       img: EscarabajoTortuga,
       title: "Escarabajo Tortuga",
       subtitle: "Subtítulo del Item 1",
@@ -35,7 +44,7 @@ function App() {
       medidas: 18.6,
     },
     {
-      imgHome: ChinchePlano,
+      imgHome: ChinchePlanoSmall,
       img: ChinchePlano,
       title: "Chinche Plano “Flag Bug”",
       subtitle: "Subtítulo del Item 2",
@@ -45,7 +54,7 @@ function App() {
       medidas: 21.5,
     },
     {
-      imgHome: EscarabajoTigre,
+      imgHome: EscarabajoTigreSmall,
       img: EscarabajoTigre,
       title: "Escarabajo Tigre",
       subtitle: "Subtítulo del Item 3",
@@ -55,7 +64,7 @@ function App() {
       medidas: 28.4,
     },
     {
-      imgHome: BichosEspina,
+      imgHome: BichosEspinaSmall,
       img: BichosEspina,
       title: "Bichos Espina",
       subtitle: "Subtítulo del Item 4",
@@ -65,7 +74,7 @@ function App() {
       medidas: 18.7,
     },
     {
-      imgHome: ChincheMalholiente,
+      imgHome: ChincheMalholienteSmall,
       img: ChincheMalholiente,
       title: "Chinche Malholiente",
       subtitle: "Subtítulo del Item 5",
@@ -75,7 +84,7 @@ function App() {
       medidas: 27.6,
     },
     {
-      imgHome: EscarabajoEscamado,
+      imgHome: EscarabajoEscamadoSmall,
       img: EscarabajoEscamado,
       title: "Escarabajo Escamado",
       subtitle: "Subtítulo del Item 6",
@@ -85,7 +94,7 @@ function App() {
       medidas: 15.5,
     },
     {
-      imgHome: AbejaNativa,
+      imgHome: AbejaNativaSmall,
       img: AbejaNativa,
       title: "Abeja Nativa sin Aguijón",
       subtitle: "Subtítulo del Item 7",
@@ -95,7 +104,7 @@ function App() {
       medidas: 21.1,
     },
     {
-      imgHome: AbejaSolitaria,
+      imgHome: AbejaSolitariaSmall,
       img: AbejaSolitaria,
       title: "Abeja Solitaria",
       subtitle: "Subtítulo del Item 8",
@@ -105,7 +114,7 @@ function App() {
       medidas: 20.7,
     },
     {
-      imgHome: BichoCazador,
+      imgHome: BichoCazadorSmall,
       img: BichoCazador,
       title: "Bicho Cazador",
       subtitle: "Subtítulo del Item 9",
