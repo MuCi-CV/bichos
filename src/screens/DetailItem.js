@@ -63,14 +63,6 @@ const DetailItem = ({ data }) => {
       handleButtonsActivity();
     });
 
-    // Bloquear el zoom si el modal está abierto
-    if (isModalOpen) {
-      document.body.classList.remove("zoom-blocker");
-    } else {
-      // Bloquear el zoom si el modal está cerrado
-      document.body.classList.add("zoom-blocker");
-    }
-
     // Limpiar los temporizadores y los listeners al desmontar el componente
     return () => {
       clearTimeout(activityTimeout);
@@ -238,6 +230,7 @@ const DetailItem = ({ data }) => {
                   alignItems: "center",
                   marginTop: isZoomed ? 0 : 25,
                   height: isZoomed ? "100vh" : "auto",
+                  width: "100%",
                 }}
               >
                 <img
@@ -307,7 +300,7 @@ const DetailItem = ({ data }) => {
       <div
         style={{
           display: isZoomed ? "none" : "block",
-          width: "50%",
+          width: "70%",
         }}
       >
         <h2
