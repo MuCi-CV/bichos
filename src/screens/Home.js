@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import MuciLogo from "../assets/muciLogo.svg";
 import "../App.css";
 import { useImage } from "../Context/ImageContext";
+import chake from "../assets/identidad/Logo Exhibiion Chake Bicho.png";
+import logo from "../assets/identidad/Logo Tatakualab-Un Espacio MuCi.png";
 
 const Home = ({ data }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -68,12 +69,21 @@ const Home = ({ data }) => {
 
   return (
     <div className="container">
-      <header style={{ marginTop: "3%", marginBottom: "3%" }}>
-        <img src={MuciLogo} alt="MUCI Logo" loading="lazy" />
+      <header style={{ marginBottom: "1%" }}>
+        <img
+          style={{ width: 400, objectFit: "cover" }}
+          src={chake}
+          alt="Chake Bicho!"
+          loading="lazy"
+        />
       </header>
       <main
         className="body"
-        style={{ display: imageLoaded ? "flex" : "none", rowGap: 37.5 }}
+        style={{
+          display: imageLoaded ? "flex" : "none",
+          rowGap: 37.5,
+          marginBottom: "5%",
+        }}
       >
         {data?.map((d, index) => (
           <Link to={`/detalle/${index}`} key={d.title} className="imgContainer">
@@ -89,6 +99,17 @@ const Home = ({ data }) => {
           </Link>
         ))}
       </main>
+      <img
+        style={{
+          width: 400,
+          objectFit: "cover",
+          marginTop: "auto",
+          marginBottom: "7%",
+        }}
+        src={logo}
+        alt="Logo Tatakualab-Un Espacio MuCi"
+        loading="lazy"
+      />
       {!imageLoaded && (
         <div className="loadingContainer">
           <div className="loader"></div>

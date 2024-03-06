@@ -81,7 +81,7 @@ const DetailItem = ({ data }) => {
 
   const item = data[index];
 
-  const currentImageMeasurement = item.medidas;
+  const currentImageMeasurement = (item.medidas * 170) / 945;
 
   const handleVolverAtras = () => {
     navigate("/");
@@ -148,8 +148,8 @@ const DetailItem = ({ data }) => {
             }}
           >
             {(currentScale * currentImageMeasurement) % 1 !== 0
-              ? (currentScale * currentImageMeasurement).toFixed(2)
-              : (currentScale * currentImageMeasurement).toFixed(0)}
+              ? (currentImageMeasurement / currentScale).toFixed(2)
+              : (currentImageMeasurement / currentScale).toFixed(0)}
             mm
           </p>
         </div>
@@ -270,6 +270,16 @@ const DetailItem = ({ data }) => {
                 alt="close"
                 style={{ position: "fixed", top: "5%", right: "5%" }}
               />
+              <img
+                src={homeIcon}
+                alt="Home Logo"
+                onClick={handleVolverAtras}
+                style={{
+                  position: "fixed",
+                  top: "5%",
+                  left: "5%",
+                }}
+              />
             </button>
             <div
               style={{
@@ -280,7 +290,7 @@ const DetailItem = ({ data }) => {
                 right: "16%",
               }}
             >
-              <img src={inverseTable} alt="escala" style={{ height: 20 }} />
+              <img src={inverseTable} alt="escala" style={{ width: 170 }} />
               <p
                 style={{
                   fontFamily: "Poppins",
@@ -289,8 +299,8 @@ const DetailItem = ({ data }) => {
                 }}
               >
                 {(currentScale * currentImageMeasurement) % 1 !== 0
-                  ? (currentScale * currentImageMeasurement).toFixed(2)
-                  : (currentScale * currentImageMeasurement).toFixed(0)}
+                  ? (currentImageMeasurement / currentScale).toFixed(2)
+                  : (currentImageMeasurement / currentScale).toFixed(0)}
                 mm
               </p>
             </div>
@@ -338,7 +348,7 @@ const DetailItem = ({ data }) => {
           </div>
           <p
             style={{
-              width: "65%",
+              width: "80%",
               textAlign: "center",
               fontFamily: "Poppins",
               fontSize: 18,
@@ -385,11 +395,13 @@ const DetailItem = ({ data }) => {
         </p>
         <img src={arrowUpRight} alt="arrowUpRight" />
       </div>
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        info={item.info}
-      />
+      <div style={{ width: "100%", height: "100%" }}>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          info={item.info}
+        />
+      </div>
     </div>
   );
 };

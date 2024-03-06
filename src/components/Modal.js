@@ -50,8 +50,8 @@ const Modal = ({ isOpen, onClose, info }) => {
           top: isOpen ? "100%" : "-100%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          backgroundColor: "rgb(24 25 17)",
-          padding: 50,
+          backgroundColor: "#000",
+          padding: 10,
           borderRadius: "16px",
           transition: "top 0.3s",
         }}

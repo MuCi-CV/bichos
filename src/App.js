@@ -11,16 +11,18 @@ import EscarabajoEscamado from "./assets/images/escarabajoEscamado.jpg";
 import AbejaNativa from "./assets/images/abejanativa.jpg";
 import AbejaSolitaria from "./assets/images/abejaSolitaria.jpg";
 import BichoCazador from "./assets/images/bichoCazador.jpg";
+import MoscaDorada from "./assets/images/mosca_30.jpg";
 import { ImageProvider } from "./Context/ImageContext";
-import info1 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo Tortuga.jpg";
-import info2 from "./assets/Tablas_Informativas_Actualizadas/Chinche Plano.jpg";
-import info3 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo Tigre.jpg";
-import info4 from "./assets/Tablas_Informativas_Actualizadas/Bichos Espina.jpg";
-import info5 from "./assets/Tablas_Informativas_Actualizadas/Chinche Malholiente.jpg";
-import info6 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo Escamado.jpg";
-import info7 from "./assets/Tablas_Informativas_Actualizadas/Abeja Nativa sin Aguijón.jpg";
-import info8 from "./assets/Tablas_Informativas_Actualizadas/Abeja Solitaria.jpg";
-import info9 from "./assets/Tablas_Informativas_Actualizadas/Bicho Cazador.jpg";
+import info1 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo-tortuga.png";
+import info2 from "./assets/Tablas_Informativas_Actualizadas/Chinche-Plana.png";
+import info3 from "./assets/Tablas_Informativas_Actualizadas/Escarabajo-tigre.png";
+import info4 from "./assets/Tablas_Informativas_Actualizadas/Cigarrita-Espina.png";
+import info5 from "./assets/Tablas_Informativas_Actualizadas/Chinche-Maloliente.png";
+import info6 from "./assets/Tablas_Informativas_Actualizadas/Gorgojo-Escamoso.png";
+import info7 from "./assets/Tablas_Informativas_Actualizadas/Abeja-sin-Aguijon.png";
+import info8 from "./assets/Tablas_Informativas_Actualizadas/Abeja-del-Sudor.png";
+import info9 from "./assets/Tablas_Informativas_Actualizadas/Chinche-acechadora.png";
+import info10 from "./assets/Tablas_Informativas_Actualizadas/Mosca-dorada.png";
 import EscarabajoTortugaSmall from "./assets/images/escarabajoTortugaSmall.jpg";
 import ChinchePlanoSmall from "./assets/images/chinchePlanoSmall.jpg";
 import EscarabajoTigreSmall from "./assets/images/escarabajoTigreSmall.jpg";
@@ -30,6 +32,7 @@ import EscarabajoEscamadoSmall from "./assets/images/escarabajoEscamadoSmall.jpg
 import AbejaNativaSmall from "./assets/images/abejaNativaSmall.jpg";
 import AbejaSolitariaSmall from "./assets/images/abejaSolitariaSmall.jpg";
 import BichoCazadorSmall from "./assets/images/bichoCazadorSmall.jpg";
+import MoscaDoradaSmall from "./assets/images/mosca_5.jpg";
 
 function App() {
   const data = [
@@ -39,17 +42,17 @@ function App() {
       title: "Escarabajo Tortuga",
       subtitle: "Subtítulo del Item 1",
       description:
-        "Sus caparazones se desarrollan de tal forma que dificultan el agarre de los depredadores.",
+        "La forma de su caparazón dificulta el agarre de los depredadores.",
       info: info1,
       medidas: 18.6,
     },
     {
       imgHome: ChinchePlanoSmall,
       img: ChinchePlano,
-      title: "Chinche Plano “Flag Bug”",
+      title: "Chinche Plana",
       subtitle: "Subtítulo del Item 2",
       description:
-        "Probablemente sea de la especie más grande de su familia en Sudamérica.",
+        "Su superficie es capaz de absorber y perder agua rápidamente imitando así la tonalidad del tronco en donde descansa.",
       info: info2,
       medidas: 21.5,
     },
@@ -59,79 +62,80 @@ function App() {
       title: "Escarabajo Tigre",
       subtitle: "Subtítulo del Item 3",
       description:
-        "es el insecto más rápido de todo el mundo, son cazadores innatos con una excelente visión.",
+        "Es un cazador innato con excelente visión que utiliza termiteros como refugio y plataforma de cacería.",
       info: info3,
       medidas: 28.4,
     },
     {
       imgHome: BichosEspinaSmall,
       img: BichosEspina,
-      title: "Bichos Espina",
+      title: "Cigarrita Espina",
       subtitle: "Subtítulo del Item 4",
       description:
-        "Son como cigarritas pero el sonido que producen es de una frecuencia tan baja, que no es audible por nosotros.",
+        "Viven en grupos y se comunican con sus compañeros a través de vibraciones y sonidos no audibles por el ser humano.",
       info: info4,
       medidas: 18.7,
     },
     {
       imgHome: ChincheMalholienteSmall,
       img: ChincheMalholiente,
-      title: "Chinche Malholiente",
+      title: "Chinche Maloliente",
       subtitle: "Subtítulo del Item 5",
       description:
-        "Esta especie muda de exoesqueleto constantemente hasta llegar a la adultez",
+        "Su principal sistema de defensa es liberar un líquido de olor penetrante que incomoda a los depredadores.",
       info: info5,
       medidas: 27.6,
     },
     {
       imgHome: EscarabajoEscamadoSmall,
       img: EscarabajoEscamado,
-      title: "Escarabajo Escamado",
+      title: "Gorgojo Escamoso",
       subtitle: "Subtítulo del Item 6",
       description:
-        "Es un escarabajo que sus larvas se crían dentro de tejido vegetal vivo.",
+        "Presentan el cuerpo cubierto de escamas que refractan la luz y producen hermosas tonalidades.",
       info: info6,
       medidas: 15.5,
     },
     {
       imgHome: AbejaNativaSmall,
       img: AbejaNativa,
-      title: "Abeja Nativa sin Aguijón",
+      title: "Abeja sin Aguijón",
       subtitle: "Subtítulo del Item 7",
       description:
-        "Son animales sociales, construyen colmenas en los huecos dentro de los árboles con un gran follaje y sombras. ",
+        "Son animales sociales, construyen colmenas en huecos dentro de grandes árboles.",
       info: info7,
       medidas: 21.1,
     },
     {
       imgHome: AbejaSolitariaSmall,
       img: AbejaSolitaria,
-      title: "Abeja Solitaria",
+      title: "Abeja del Sudor",
       subtitle: "Subtítulo del Item 8",
       description:
-        "Son tantas especies diferentes que habitan desde Ontario Canadá en hasta la pampa en Argentina.",
+        "No son agresivas aunque poseen un aguijón y forman parte de una inmensa mayoría de especies de abejas de hábitos solitarios.",
       info: info8,
       medidas: 20.7,
     },
     {
       imgHome: BichoCazadorSmall,
       img: BichoCazador,
-      title: "Bicho Cazador",
+      title: "Chinche Acechadora",
       subtitle: "Subtítulo del Item 9",
       description:
-        "De la misma familia que las vinchucas. Las formas y colores les sirven de camuflaje para parecer hojas secas.",
+        "Es un cazador que se esconde entre las flores aprovechando su parecido con partes secas de la planta.",
       info: info9,
       medidas: 15.6,
     },
-    /*{
-      imgHome: "",
-      img: "",
+    {
+      imgHome: MoscaDoradaSmall,
+      img: MoscaDorada,
       title: "Mosca Dorada",
       subtitle: "Subtítulo del Item 10",
       description:
-        "son comunes en las casas, sus larvas son descomponedoras de materia orgánica",
-      info: "codigo_qr_8.png",
-    },*/
+        "Sus larvas se alimentan de materia orgánica en descomposición y contribuyen a degradar los restos vegetales e integrar sus componentes al suelo.",
+      info: info10,
+      medidas: 27.5,
+    },
   ];
   return (
     <Router>
