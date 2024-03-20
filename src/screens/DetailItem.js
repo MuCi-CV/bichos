@@ -106,6 +106,24 @@ const DetailItem = ({ data }) => {
     }
   };
 
+  useEffect(() => {
+    // Bloquear el zoom al cargar el componente
+    document.body.classList.add("zoom-blocker");
+
+    // Bloquear el gesto de pellizcar para evitar el zoom en dispositivos táctiles
+    document.addEventListener("gesturestart", function (e) {
+      e.preventDefault();
+    });
+
+    // Eliminar el bloqueo de zoom y el evento al desmontar el componente
+    /*return () => {
+      document.body.classList.remove("zoom-blocker");
+      document.removeEventListener("gesturestart", function (e) {
+        e.preventDefault();
+      });
+    };*/
+  }, []);
+
   return (
     <div
       style={{
@@ -221,6 +239,7 @@ const DetailItem = ({ data }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 overflow: "visible",
+                touchAction: "none",
               }}
             >
               <div
@@ -245,16 +264,16 @@ const DetailItem = ({ data }) => {
                 />
               </div>
             </TransformComponent>
-            <button
+
+            <img
+              src={xIcon}
+              alt="close"
               style={{
                 display: isZoomed ? "block" : "none",
                 background: "none",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "20px",
-                position: "absolute",
-                top: "10px",
-                right: "10px",
+                position: "fixed",
+                top: "5%",
+                right: "5%",
               }}
               onClick={() => {
                 if (currentScale === 1) {
@@ -264,23 +283,7 @@ const DetailItem = ({ data }) => {
                   resetTransform();
                 }
               }}
-            >
-              <img
-                src={xIcon}
-                alt="close"
-                style={{ position: "fixed", top: "5%", right: "5%" }}
-              />
-              <img
-                src={homeIcon}
-                alt="Home Logo"
-                onClick={handleVolverAtras}
-                style={{
-                  position: "fixed",
-                  top: "5%",
-                  left: "5%",
-                }}
-              />
-            </button>
+            />
             <div
               style={{
                 display: isZoomed ? "flex" : "none",
@@ -307,6 +310,19 @@ const DetailItem = ({ data }) => {
           </>
         )}
       </TransformWrapper>
+
+      <img
+        src={homeIcon}
+        alt="Home Logo"
+        onClick={handleVolverAtras}
+        style={{
+          display: isZoomed ? "block" : "none",
+          background: "none",
+          position: "fixed",
+          top: "5%",
+          left: "5%",
+        }}
+      />
       <div
         style={{
           display: isZoomed ? "none" : "block",
