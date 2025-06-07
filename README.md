@@ -1,10 +1,10 @@
-# README.md para muci-app
+# README.md para Bichos
 
-Este documento describe cómo configurar y desplegar la aplicación `muci-app`.
+Este documento describe cómo configurar y desplegar la aplicación `bichos`.
 
 ## Descripción del Proyecto
 
-`muci-app` es una aplicación web desarrollada con **React**. Basándonos en la estructura de archivos y las dependencias en `package.json`, es un proyecto típico de **Create React App (CRA)**.
+`bichos` es una aplicación web desarrollada con **React**. Basándonos en la estructura de archivos y las dependencias en `package.json`, es un proyecto típico de **Create React App (CRA)**.
 
 ### Estructura de Carpetas
 
@@ -36,7 +36,7 @@ Sigue estos pasos para configurar el proyecto en tu entorno de desarrollo:
 1.  **Clona el repositorio:**
     ```bash
     git clone <URL_DEL_REPOSITORIO>
-    cd muci-app
+    cd bichos
     ```
     *Reemplaza `<URL_DEL_REPOSITORIO>` con la URL real de tu repositorio.*
 
@@ -77,10 +77,10 @@ La carpeta build es una aplicación estática y puede ser servida por cualquier 
 #### 1. Copia los archivos de la build:
 Primero, asegúrate de que los archivos de la carpeta build estén en tu servidor. Puedes copiarlos vía scp, rsync, o a través de tu proceso de CI/CD.
 
-Por ejemplo, si los copias a /var/www/html/muci-app/:
+Por ejemplo, si los copias a /var/www/html/bichos/:
 
 #### 2. Configura Nginx:
-Crea un nuevo archivo de configuración para tu sitio en Nginx. Un lugar común es /etc/nginx/sites-available/muci-app (en sistemas basados en Debian/Ubuntu).
+Crea un nuevo archivo de configuración para tu sitio en Nginx. Un lugar común es /etc/nginx/sites-available/bichos (en sistemas basados en Debian/Ubuntu).
 
 ```Nginx
 
@@ -88,7 +88,7 @@ server {
     listen 80;
     server_name tu_dominio.com www.tu_dominio.com; # Reemplaza con tu dominio
 
-    root /var/www/html/muci-app; # Ruta donde copiaste los archivos de la build
+    root /var/www/html/bichos; # Ruta donde copiaste los archivos de la build
     index index.html index.htm;
 
     location / {
@@ -111,7 +111,7 @@ Crea un enlace simbólico desde sites-available a sites-enabled:
 
 ```Bash
 
-sudo ln -s /etc/nginx/sites-available/muci-app /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/bichos /etc/nginx/sites-enabled/
 ```
 
 Verifica la sintaxis de la configuración de Nginx y reinicia el servicio:
